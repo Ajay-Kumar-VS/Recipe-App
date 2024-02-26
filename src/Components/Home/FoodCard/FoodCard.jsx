@@ -1,26 +1,33 @@
 import React, { useContext } from "react";
-import {FoodRecipeContext} from '../../../Context/FoodRecipeContext'
+import { FoodRecipeContext } from "../../../Context/FoodRecipeContext";
 import { useNavigate } from "react-router-dom";
-import './FoodCard.css'
+import "./FoodCard.css";
 
 const FoodCard = ({ foodItem }) => {
-  const nevigate=useNavigate()
+  const nevigate = useNavigate();
   const { id, title, image } = foodItem;
-  const {FoodRecipedata, setFoodRecipedata}=useContext(FoodRecipeContext)
-  console.log(FoodRecipedata,"FoodRecipedata")
-  const apiKey=import.meta.env.VITE_API_KEY
 
-  const urlForRecipe=`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false`
-  async function  getRecipe(id){
-    const dataFromUrl= await fetch(`${urlForRecipe}&apiKey=${apiKey}`)
-    // console.log(dataFromUrl)
-    const foodDataInJSON=await dataFromUrl.json()
-    // console.log(foodDataInJSON)
+  //using context to get data
+  const { FoodRecipedata, setFoodRecipedata } = useContext(FoodRecipeContext);
+
+  //Api key of spoonacular.com
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+  const urlForRecipe = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false`;
+
+  // fetching recipe data from spoonacular.com
+  async function getRecipe(id) {
+    const dataFromUrl = await fetch(`${urlForRecipe}&apiKey=${apiKey}`);
+
+    //parsing to JSON format
+    const foodDataInJSON = await dataFromUrl.json();
+
+    // add  the data to Recipe Context
     setFoodRecipedata([foodDataInJSON]);
-    nevigate("/Recipe")
-    // console.log(FoodRecipedata,"FoodRecipedata111")
-}
- 
+
+    // after this nevigating to Recipe page
+    nevigate("/Recipe");
+  }
 
   return (
     <>
@@ -29,10 +36,16 @@ const FoodCard = ({ foodItem }) => {
           <img className="img" src={image} />
         </div>
         <div className="card-container">
-        <div className="card-title">{title}</div>
+          <div className="card-title">{title}</div>
         </div>
         <div className="button-container">
-        <button className="recipe-button" onClick={()=>{getRecipe(id)}}>Recipe</button>
+          <button
+            className="recipe-button"
+            onClick={() => {
+              getRecipe(id);
+            }}>
+            Recipe
+          </button>
         </div>
       </div>
     </>

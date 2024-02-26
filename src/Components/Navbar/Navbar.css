@@ -1,70 +1,61 @@
-.Navbar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    height: 7vh;
-    
-   
-    
+.Navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 7vh;
 }
 
-.RecipeApp{
-    position: absolute;
-    top:15px;
-    left:10px;
-    font-size: 50px;
-    font-weight: 600;
-
-
+.RecipeApp {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  font-size: 50px;
+  font-weight: 600;
 }
-.inputBox{
-    position: absolute;
-    top: 30px;
-    left: 400px;
+.inputBox {
+  position: absolute;
+  top: 30px;
+  left: 400px;
   width: 430px;
-    height: 30px;
-    text-align: center;
-    font-size: larger;
-    border-radius: 5px;
-    
+  height: 30px;
+  text-align: center;
+  font-size: larger;
+  border-radius: 5px;
 }
-#searchButton{
-    position: absolute;
+#searchButton {
+  position: absolute;
   /* width: 430px; */
   top: 35px;
-    right: 390px;
-    width: 30px;
-    height: 25px;
+  right: 390px;
+  width: 30px;
+  height: 25px;
 }
-.home{
-    position: absolute;
-    top: 30px;
-    right: 290px;
-    width: 30px;
-    height: 25px;
-    font-size: 25px;
-    text-decoration: none;
-    color: black;
-    
+.home {
+  position: absolute;
+  top: 30px;
+  right: 290px;
+  width: 30px;
+  height: 25px;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
 }
-.recipe{
-    position: absolute;
-    top: 30px;
-    right: 190px;
-    width: 30px;
-    height: 25px;
-    font-size: 25px;
-    /* font-weight: 600; */
-    text-decoration: none;
-    color: black;
+.recipe {
+  position: absolute;
+  top: 30px;
+  right: 190px;
+  width: 30px;
+  height: 25px;
+  font-size: 25px;
+  /* font-weight: 600; */
+  text-decoration: none;
+  color: black;
 
-
-    /* color: black; */
+  /* color: black; */
 }
-.active{
-    color: brown;
-    text-decoration: underline;
-    font-weight: bold;
-    
-} 
+.active {
+  color: brown;
+  text-decoration: underline;
+  font-weight: bold;
+}

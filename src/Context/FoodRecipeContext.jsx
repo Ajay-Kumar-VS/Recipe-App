@@ -1,6 +1,8 @@
-import { createContext ,useState} from "react";
+import { createContext, useState } from "react";
 
 const FoodRecipeContext = createContext();
+
+//creating context and context provider for FoodItem recipe 
 
 const FoodRecipeContextProvider = (props) => {
   const { children } = props;
@@ -8,7 +10,9 @@ const FoodRecipeContextProvider = (props) => {
 
   return (
     <div>
-      <FoodRecipeContext.Provider value={{ FoodRecipedata, setFoodRecipedata }}>{children}</FoodRecipeContext.Provider>
+      <FoodRecipeContext.Provider value={{ FoodRecipedata, setFoodRecipedata }}>
+        {children}
+      </FoodRecipeContext.Provider>
     </div>
   );
 };

@@ -2,13 +2,15 @@ import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { FoodContextProvider } from "./Context/FoodContext.jsx";
-import { FoodRecipeContextProvider } from "./Context/FoodRecipeContext.jsx";
-// import BrowserRouter
-import {   RouterProvider, Route, createBrowserRouter, createRoutesFromElements}  from 'react-router-dom';
+
+import {
+  RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import Home from "./Components/Home/Home.jsx";
 import Recipe from "./Components/RecipePage/Recipe.jsx";
-
 
 //first way to create Routes
 // const router= createBrowserRouter([
@@ -27,20 +29,20 @@ import Recipe from "./Components/RecipePage/Recipe.jsx";
 //     ]
 //   }
 // ])
- 
 
 //2nd way to create Routes
 
-const router= createBrowserRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
-   <Route path="/" element={<App/>} errorElement={<div className="pageNotFound">Page Not Found</div>}>
-      <Route path="" element={< Home/>}/>
-      <Route path="Recipe" element={< Recipe/>}/>
-
-   
-   </Route>
+    <Route
+      path="/"
+      element={<App />}
+      errorElement={<div className="pageNotFound">Page Not Found</div>}>
+      <Route path="" element={<Home />} />
+      <Route path="Recipe" element={<Recipe />} />
+    </Route>
   )
-)
+);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
