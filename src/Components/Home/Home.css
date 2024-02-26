@@ -1,0 +1,26 @@
+/* #pagination-container {
+    background-color: wheat;
+} */
+.home-container{
+    display: flex;
+    flex-direction: column;
+}
+.foodCards{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 100px;
+    border-radius: 5px;
+    margin: 14px;
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5); */
+    padding: 2px;
+    /* width: 100vw; */
+}
+.pagination-container{
+    position: absolute;
+    bottom: 20px;
+    left: 35%;
+    /* background: #000; */
+    /* width: 500px; */
+    
+}

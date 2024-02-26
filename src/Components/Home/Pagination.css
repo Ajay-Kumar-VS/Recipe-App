@@ -1,0 +1,11 @@
+.pagination-bution{
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    border-radius: 6px;
+    
+}
+.pagination-container{
+    display: flex;
+    justify-content: center;
+}
