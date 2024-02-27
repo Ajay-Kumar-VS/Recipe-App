@@ -3,9 +3,8 @@ import { FoodRecipeContext } from "../../Context/FoodRecipeContext";
 
 import "./Recipe.css";
 
-
-const Recipe = () => {
-  const { FoodRecipedata, setFoodRecipedata } = useContext(FoodRecipeContext);
+ const Recipe = () => {
+  const { FoodRecipedata } = useContext(FoodRecipeContext);
   
 
   //if no data of recipe 

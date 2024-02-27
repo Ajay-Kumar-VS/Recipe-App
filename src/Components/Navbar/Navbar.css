@@ -16,7 +16,7 @@
 .inputBox {
   position: absolute;
   top: 30px;
-  left: 400px;
+  left: 350px;
   width: 430px;
   height: 30px;
   text-align: center;
@@ -27,7 +27,7 @@
   position: absolute;
   /* width: 430px; */
   top: 35px;
-  right: 390px;
+  right: 360px;
   width: 30px;
   height: 25px;
 }

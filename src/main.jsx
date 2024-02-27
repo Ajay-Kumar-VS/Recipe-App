@@ -1,16 +1,20 @@
-import React, { StrictMode } from "react";
+import React, { StrictMode ,lazy} from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-
+import App from './App.jsx'
+// import Home from "./Components/Home/Home.jsx";
 import {
   RouterProvider,
   Route,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Home from "./Components/Home/Home.jsx";
-import Recipe from "./Components/RecipePage/Recipe.jsx";
+// // const App=lazy(()=> import('./App.jsx'))
+const Home=lazy(()=> (import("./Components/Home/Home.jsx")))
+const Recipe=lazy(()=> (import('./Components/RecipePage/Recipe.jsx')))
+
+
+
 
 //first way to create Routes
 // const router= createBrowserRouter([
@@ -34,17 +38,19 @@ import Recipe from "./Components/RecipePage/Recipe.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+    // <Suspense fallback={<Loading/>}>
     <Route
       path="/"
       element={<App />}
       errorElement={<div className="pageNotFound">Page Not Found</div>}>
-      <Route path="" element={<Home />} />
-      <Route path="Recipe" element={<Recipe />} />
+      <Route path="" element={<Home/>}/>
+      <Route path="Recipe" element={<Recipe/>}/>
     </Route>
+    // </Suspense>
   )
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </StrictMode>
 );
